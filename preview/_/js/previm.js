@@ -98,6 +98,12 @@
       Array.prototype.forEach.call(_doc.querySelectorAll('pre code'), hljs.highlightBlock);
       autoScroll('body', beforePageYOffset);
       style_header();
+
+      MathJax.Hub.Config({ tex2jax: {
+        inlineMath: [['$','$'], ["\\(","\\)"]],
+        displayMath: [['$$','$$'], ['\\[','\\]']],
+      } });
+      MathJax.Hub.Typeset(document.getElementById("preview"));
     }
   }
 
